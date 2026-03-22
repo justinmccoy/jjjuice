@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./App.css";
 import { supabase } from "./supabaseClient";
 
 const chilies = [
@@ -564,7 +565,8 @@ export default function JJsJuice() {
         background: "linear-gradient(180deg, rgba(80,20,0,0.4) 0%, transparent 100%)",
       }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <div style={{ fontSize: "clamp(9px, 2vw, 11px)", letterSpacing: "0.25em", color: "rgba(255,180,60,0.5)", marginBottom: "8px" }}>
+          <img src="/logo.png" alt="JJJUICE Logo" className="app-logo" />
+          <div style={{ fontSize: "clamp(9px, 2vw, 11px)", letterSpacing: "0.25em", color: "rgba(255,180,60,0.5)", marginBottom: "8px", textAlign: "center" }}>
             ▸ REHYDRATED CHILE RATING SYSTEM
           </div>
           <h1 style={{
@@ -575,10 +577,11 @@ export default function JJsJuice() {
             lineHeight: 1.1,
             color: "#ffd080",
             fontStyle: "italic",
+            textAlign: "center",
           }}>
             JJ's Juice
           </h1>
-          <p style={{ margin: "8px 0 0", fontSize: "clamp(12px, 3vw, 14px)", color: "rgba(245,222,179,0.5)", fontStyle: "italic" }}>
+          <p style={{ margin: "8px 0 0", fontSize: "clamp(12px, 3vw, 14px)", color: "rgba(245,222,179,0.5)", fontStyle: "italic", textAlign: "center" }}>
             Rate, review, and discover rehydrated chile profiles
           </p>
           
@@ -1726,3 +1729,5 @@ export default function JJsJuice() {
     </div>
   );
 }
+
+// Made with Bob

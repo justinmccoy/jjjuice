@@ -1,0 +1,370 @@
+/* JJ's Juice - Chili Rating App Styles - Clean Minimal Design */
+
+/* Force JJJUICE brand colors throughout */
+#root {
+    background: var(--black) !important;
+    min-height: 100vh;
+}
+
+/* Main App Container Override */
+#root > div {
+    background: var(--black) !important;
+    color: var(--cream) !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Header Section - Remove gradient */
+#root > div > div:first-child {
+    background: var(--black) !important;
+    border-bottom: 1px solid rgba(245, 168, 71, 0.2) !important;
+}
+
+/* App Title */
+#root h1 {
+    color: var(--mango-melody) !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* Subtitle text */
+#root > div > div:first-child p {
+    color: rgba(253, 245, 230, 0.6) !important;
+}
+
+/* Section labels */
+#root > div > div:first-child > div > div:first-child {
+    color: var(--mango-melody) !important;
+}
+
+/* Navigation Tabs - Clean flat design */
+#root > div > div:first-child button {
+    background: transparent !important;
+    border: 1px solid rgba(253, 245, 230, 0.2) !important;
+    color: rgba(253, 245, 230, 0.6) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    font-size: 0.85rem !important;
+}
+
+#root > div > div:first-child button:hover {
+    border-color: var(--mango-melody) !important;
+    background: transparent !important;
+    color: var(--mango-melody) !important;
+}
+
+/* Active tab - No gradient, flat color */
+#root > div > div:first-child button[style*="rgba(255,140,40,0.2)"],
+#root > div > div:first-child button[style*="background: rgba(255, 140, 40, 0.2)"] {
+    background: transparent !important;
+    border-color: var(--mango-melody) !important;
+    color: var(--mango-melody) !important;
+    box-shadow: none !important;
+}
+
+/* Chili selector buttons - Clean design */
+#root > div > div:nth-child(2) > div > div:first-child button {
+    background: transparent !important;
+    border: 1px solid rgba(253, 245, 230, 0.15) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+#root > div > div:nth-child(2) > div > div:first-child button:hover {
+    border-color: var(--mango-melody) !important;
+    background: transparent !important;
+    transform: none !important;
+}
+
+/* Active chili button - No gradient */
+#root > div > div:nth-child(2) > div > div:first-child button[style*="rgba(255,140,40,0.12)"] {
+    background: transparent !important;
+    border-color: var(--mango-melody) !important;
+    box-shadow: none !important;
+}
+
+/* Chili name in button */
+#root > div > div:nth-child(2) > div > div:first-child button > div:last-child > div:first-child {
+    color: var(--cream) !important;
+    font-weight: 500 !important;
+}
+
+/* Chili aka name */
+#root > div > div:nth-child(2) > div > div:first-child button > div:last-child > div:last-child {
+    color: rgba(253, 245, 230, 0.5) !important;
+}
+
+/* Rating form header - No gradient */
+#root > div > div:nth-child(2) > div > div:last-child > div:first-child {
+    background: transparent !important;
+    border: 1px solid rgba(245, 168, 71, 0.2) !important;
+    border-radius: 12px !important;
+}
+
+/* Rating form h2 */
+#root > div > div:nth-child(2) > div > div:last-child h2 {
+    color: var(--mango-melody) !important;
+    font-weight: 600 !important;
+}
+
+/* Section labels in forms */
+#root > div > div:nth-child(2) div[style*="letterSpacing: \"0.2em\""] {
+    color: var(--mango-melody) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.15em !important;
+}
+
+/* Attribute labels */
+#root > div > div:nth-child(2) div[style*="fontSize: \"11px\""][style*="letterSpacing: \"0.1em\""] {
+    color: var(--cream) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+}
+
+/* Slider dots - Clean circles */
+#root > div > div:nth-child(2) button[style*="borderRadius: \"50%\""][style*="width: \"32px\""],
+#root > div > div:nth-child(2) button[style*="borderRadius: \"50%\""][style*="width: \"28px\""] {
+    background: transparent !important;
+    border: 2px solid rgba(253, 245, 230, 0.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+#root > div > div:nth-child(2) button[style*="borderRadius: \"50%\""][style*="width: \"32px\""]:hover,
+#root > div > div:nth-child(2) button[style*="borderRadius: \"50%\""][style*="width: \"28px\""]:hover {
+    border-color: var(--mango-melody) !important;
+    background: transparent !important;
+    transform: none !important;
+}
+
+/* Active slider dots - Solid color, no gradient */
+#root > div > div:nth-child(2) button[style*="borderRadius: \"50%\""][style*="background: rgba(255, 140, 40"] {
+    background: var(--mango-melody) !important;
+    border-color: var(--mango-melody) !important;
+    box-shadow: none !important;
+}
+
+/* Color rating buttons */
+#root > div > div:nth-child(2) button[style*="aspectRatio: \"1\""] {
+    border: 2px solid rgba(253, 245, 230, 0.2) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+#root > div > div:nth-child(2) button[style*="aspectRatio: \"1\""]:hover {
+    border-color: var(--mango-melody) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Selected color button */
+#root > div > div:nth-child(2) button[style*="aspectRatio: \"1\""][style*="border: 3px solid rgba(255, 180, 80"] {
+    border-color: var(--mango-melody) !important;
+    border-width: 3px !important;
+    box-shadow: none !important;
+}
+
+/* Textarea */
+#root textarea {
+    background: transparent !important;
+    border: 1px solid rgba(253, 245, 230, 0.2) !important;
+    color: var(--cream) !important;
+    border-radius: 8px !important;
+}
+
+#root textarea:focus {
+    border-color: var(--mango-melody) !important;
+    background: transparent !important;
+    outline: none !important;
+}
+
+#root textarea::placeholder {
+    color: rgba(253, 245, 230, 0.4) !important;
+}
+
+/* Input fields */
+#root input[type="text"] {
+    background: transparent !important;
+    border: 1px solid rgba(253, 245, 230, 0.2) !important;
+    color: var(--cream) !important;
+    border-radius: 8px !important;
+}
+
+#root input[type="text"]:focus {
+    border-color: var(--mango-melody) !important;
+    background: transparent !important;
+    outline: none !important;
+}
+
+#root input[type="text"]::placeholder {
+    color: rgba(253, 245, 230, 0.4) !important;
+}
+
+/* Submit button - Clean flat design */
+#root > div > div:nth-child(2) button[style*="Submit Rating"],
+#root button:last-child {
+    background: transparent !important;
+    border: 2px solid var(--mango-melody) !important;
+    color: var(--mango-melody) !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+#root > div > div:nth-child(2) button[style*="Submit Rating"]:hover,
+#root button:last-child:hover {
+    background: var(--mango-melody) !important;
+    color: var(--black) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Review cards - Clean design */
+#root > div > div:nth-child(2) > div > div[style*="border: 1px solid rgba(255, 140, 40"] {
+    background: transparent !important;
+    border: 1px solid rgba(253, 245, 230, 0.15) !important;
+    border-radius: 12px !important;
+    transition: all 0.2s ease !important;
+}
+
+#root > div > div:nth-child(2) > div > div[style*="border: 1px solid rgba(255, 140, 40"]:hover {
+    background: transparent !important;
+    border-color: var(--mango-melody) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Review card titles */
+#root > div > div:nth-child(2) > div > div h3 {
+    color: var(--cream) !important;
+    font-weight: 600 !important;
+}
+
+/* Review card text */
+#root > div > div:nth-child(2) > div > div p {
+    color: rgba(253, 245, 230, 0.7) !important;
+}
+
+/* Profile code segments */
+#root div[style*="fontFamily: \"Courier New\""] {
+    background: transparent !important;
+    border: 2px solid var(--mango-melody) !important;
+    color: var(--mango-melody) !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+}
+
+/* Success/Error messages */
+#root span[style*="#7dce82"] {
+    color: var(--lemon-lime) !important;
+}
+
+#root span[style*="#ff8c6b"] {
+    color: var(--melon-mambo) !important;
+}
+
+/* Contact button - Clean design */
+#root button[style*="Contact"] {
+    background: transparent !important;
+    color: var(--mango-melody) !important;
+    border: 2px solid var(--mango-melody) !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+#root button[style*="Contact"]:hover {
+    background: var(--mango-melody) !important;
+    color: var(--black) !important;
+    border-color: var(--mango-melody) !important;
+    transform: none !important;
+}
+
+/* Modal overlay */
+#root > div > div[style*="position: fixed"] {
+    background: rgba(10, 10, 10, 0.95) !important;
+}
+
+/* Modal content */
+#root > div > div[style*="position: fixed"] > div {
+    background: var(--black) !important;
+    border: 2px solid rgba(253, 245, 230, 0.2) !important;
+    border-radius: 12px !important;
+}
+
+/* Modal title */
+#root > div > div[style*="position: fixed"] h2 {
+    color: var(--mango-melody) !important;
+}
+
+/* Modal close button */
+#root > div > div[style*="position: fixed"] button[style*="position: absolute"] {
+    background: transparent !important;
+    border: 1px solid rgba(253, 245, 230, 0.2) !important;
+    color: var(--cream) !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+}
+
+#root > div > div[style*="position: fixed"] button[style*="position: absolute"]:hover {
+    background: transparent !important;
+    border-color: var(--mango-melody) !important;
+    color: var(--mango-melody) !important;
+    transform: none !important;
+}
+
+/* Chili detail cards */
+#root > div > div:nth-child(2) > div[style*="gridTemplateColumns"] > div {
+    background: transparent !important;
+    border: 1px solid rgba(253, 245, 230, 0.15) !important;
+    border-radius: 12px !important;
+}
+
+/* Flavor notes tags */
+#root div[style*="fontStyle: \"italic\""][style*="padding: \"4px 10px\""] {
+    background: transparent !important;
+    border: 1px solid rgba(245, 168, 71, 0.3) !important;
+    color: var(--mango-melody) !important;
+    border-radius: 20px !important;
+}
+
+/* Scoville badge */
+#root div[style*="background: rgba(255, 100, 20"] {
+    background: transparent !important;
+    border: 1px solid var(--melon-mambo) !important;
+    color: var(--melon-mambo) !important;
+    border-radius: 20px !important;
+}
+
+/* Loading state */
+.loading-spinner {
+    color: var(--mango-melody) !important;
+}
+
+/* Logo in header */
+.app-logo {
+    width: 120px;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #root > div > div:first-child button {
+        font-size: 0.75rem !important;
+        padding: 0.75rem 1.5rem !important;
+    }
+    
+    .app-logo {
+        width: 80px;
+    }
+}
+
+/* Made with Bob */
