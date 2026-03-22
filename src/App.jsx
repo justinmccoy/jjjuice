@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { supabase } from "./supabaseClient";
+import { supabase, isSupabaseConfigured } from "./supabaseClient";
 
 const chilies = [
   { 
@@ -403,6 +403,13 @@ export default function JJsJuice() {
   }, []);
 
   const loadReviews = async () => {
+    // Skip if Supabase is not configured
+    if (!isSupabaseConfigured()) {
+      console.warn('Supabase not configured. Running in demo mode.');
+      setIsLoading(false);
+      return;
+    }
+    
     try {
       setIsLoading(true);
       const { data, error } = await supabase
@@ -452,6 +459,13 @@ export default function JJsJuice() {
     if (Object.values(ratings).some(v => v === 0)) {
       setSubmitMessage("Please rate all attributes before submitting.");
       setTimeout(() => setSubmitMessage(""), 3000);
+      return;
+    }
+    
+    // Check if Supabase is configured
+    if (!isSupabaseConfigured()) {
+      setSubmitMessage("Database not configured. Running in demo mode - ratings cannot be saved.");
+      setTimeout(() => setSubmitMessage(""), 5000);
       return;
     }
     
