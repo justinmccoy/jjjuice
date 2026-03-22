@@ -396,6 +396,7 @@ export default function JJsJuice() {
   const [view, setView] = useState("rate"); // "rate" | "history" | "totals"
   const [reviewerName, setReviewerName] = useState("");
   const [notes, setNotes] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [ratings, setRatings] = useState({
     flavorDepth: 0,
     earthiness: 0,
@@ -419,6 +420,16 @@ export default function JJsJuice() {
   // Load reviews from Supabase on mount
   useEffect(() => {
     loadReviews();
+  }, []);
+
+  // Handle window resize for responsive layout
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const loadReviews = async () => {
@@ -580,16 +591,16 @@ export default function JJsJuice() {
       {/* Header */}
       <div style={{
         borderBottom: "1px solid rgba(255,140,40,0.2)",
-        padding: "28px 32px 20px",
+        padding: "clamp(16px, 4vw, 28px) clamp(16px, 4vw, 32px) clamp(12px, 3vw, 20px)",
         background: "linear-gradient(180deg, rgba(80,20,0,0.4) 0%, transparent 100%)",
       }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <div style={{ fontSize: "11px", letterSpacing: "0.25em", color: "rgba(255,180,60,0.5)", marginBottom: "8px" }}>
+          <div style={{ fontSize: "clamp(9px, 2vw, 11px)", letterSpacing: "0.25em", color: "rgba(255,180,60,0.5)", marginBottom: "8px" }}>
             ▸ REHYDRATED CHILE RATING SYSTEM
           </div>
           <h1 style={{
             margin: 0,
-            fontSize: "clamp(32px, 5vw, 52px)",
+            fontSize: "clamp(24px, 7vw, 52px)",
             fontWeight: "400",
             letterSpacing: "-0.02em",
             lineHeight: 1.1,
@@ -598,12 +609,12 @@ export default function JJsJuice() {
           }}>
             JJ's Juice
           </h1>
-          <p style={{ margin: "8px 0 0", fontSize: "14px", color: "rgba(245,222,179,0.5)", fontStyle: "italic" }}>
+          <p style={{ margin: "8px 0 0", fontSize: "clamp(12px, 3vw, 14px)", color: "rgba(245,222,179,0.5)", fontStyle: "italic" }}>
             Rate, review, and discover rehydrated chile profiles
           </p>
           
           {/* View Toggle */}
-          <div style={{ marginTop: "16px", display: "flex", gap: "8px" }}>
+          <div style={{ marginTop: "16px", display: "flex", gap: "6px", flexWrap: "wrap" }}>
             {[
               { id: "rate", label: "Rate a Chile", icon: "✦" },
               { id: "history", label: `History (${allReviews.length})`, icon: "◷" },
@@ -617,18 +628,23 @@ export default function JJsJuice() {
                   background: view === tab.id ? "rgba(255,140,40,0.2)" : "transparent",
                   border: `1px solid ${view === tab.id ? "rgba(255,140,40,0.4)" : "rgba(255,255,255,0.1)"}`,
                   borderRadius: "6px",
-                  padding: "8px 16px",
-                  fontSize: "12px",
+                  padding: "clamp(6px, 2vw, 8px) clamp(10px, 3vw, 16px)",
+                  fontSize: "clamp(10px, 2.5vw, 12px)",
                   color: view === tab.id ? "#ffd080" : "rgba(245,222,179,0.5)",
                   cursor: "pointer",
                   transition: "all 0.2s ease",
                   letterSpacing: "0.05em",
                   display: "flex",
                   alignItems: "center",
-                  gap: "6px",
+                  gap: "4px",
+                  whiteSpace: "nowrap",
+                  flex: "1 1 auto",
+                  minWidth: "fit-content",
+                  justifyContent: "center",
                 }}
               >
-                <span>{tab.icon}</span> {tab.label}
+                <span>{tab.icon}</span>
+                {isMobile ? tab.label.split(' ')[0] : tab.label}
               </button>
             ))}
           </div>
@@ -637,8 +653,12 @@ export default function JJsJuice() {
 
       {view === "rate" && (
         /* RATE VIEW */
-        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "24px", width: "100%", boxSizing: "border-box" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "minmax(200px, 280px) 1fr", gap: "24px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "clamp(12px, 3vw, 24px)", width: "100%", boxSizing: "border-box" }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "minmax(200px, 280px) 1fr",
+            gap: "clamp(12px, 3vw, 24px)"
+          }}>
             {/* Chili List */}
             <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
               <div style={{ fontSize: "10px", letterSpacing: "0.2em", color: "rgba(255,180,60,0.4)", marginBottom: "8px" }}>
@@ -763,7 +783,7 @@ export default function JJsJuice() {
                 />
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "16px" }}>
                 {/* Flavor Attributes */}
                 <div style={{
                   background: "rgba(20,8,0,0.5)",
@@ -816,7 +836,7 @@ export default function JJsJuice() {
                     <div style={{ fontSize: "10px", letterSpacing: "0.2em", color: "rgba(255,180,60,0.4)", marginBottom: "12px" }}>
                       COLOR
                     </div>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(3, 1fr)", gap: "8px" }}>
                       {COLOR_OPTIONS.map(option => (
                         <button
                           key={option.value}
