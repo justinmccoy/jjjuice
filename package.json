@@ -1,8 +1,21 @@
 {
-  "name": "jjjuice",
+  "name": "jjjuice-rate",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "Chili pepper rating subdomain application with Supabase database",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinmccoy/jjjuice-rate.git"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "supabase",
+    "chili-peppers",
+    "rating-app",
+    "food"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

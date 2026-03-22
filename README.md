@@ -2,6 +2,16 @@
 
 A React web application for rating and reviewing different types of chili peppers. Track flavor profiles, heat levels, and tasting notes for various dried chilies used in Mexican cuisine.
 
+> **Note:** This is the rating subdomain application (`rate.jjjuice.de`). For the main application, see [jjjuice-main](https://github.com/justinmccoy/jjjuice-main) repository.
+
+## Repository Structure
+
+This project is part of a two-repository architecture:
+- **jjjuice-rate** (this repo) - Rating application for subdomain
+- **jjjuice-main** - Main application and landing page
+
+See [REPOSITORY_STRUCTURE.md](./REPOSITORY_STRUCTURE.md) for complete details on the multi-repository setup.
+
 ## Features
 
 - **Rate Chilies**: Evaluate chilies across multiple attributes (flavor depth, earthiness, fruitiness, smokiness, sweetness)
@@ -31,7 +41,7 @@ A React web application for rating and reviewing different types of chili pepper
 
 1. Clone the repository or navigate to the project directory:
 ```bash
-cd jjjuice
+cd jjjuice-rate
 ```
 
 2. Install dependencies:
@@ -122,20 +132,24 @@ See [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) for detailed deployment instruction
 ## Project Structure
 
 ```
-jjjuice/
+jjjuice-rate/
 ├── src/
-│   ├── App.jsx              # Main application component
-│   ├── main.jsx             # Application entry point
-│   ├── supabaseClient.js    # Supabase configuration
-│   └── index.css            # Global styles
-├── index.html               # HTML template
-├── package.json             # Dependencies and scripts
-├── vite.config.js           # Vite configuration
-├── supabase-schema.sql      # Database schema
-├── SUPABASE_SETUP.md        # Supabase setup guide
-├── .env.example             # Environment variables template
-└── README.md                # This file
+│   ├── App.jsx                  # Main application component
+│   ├── main.jsx                 # Application entry point
+│   ├── supabaseClient.js        # Supabase configuration
+│   └── index.css                # Global styles
+├── index.html                   # HTML template
+├── package.json                 # Dependencies and scripts
+├── vite.config.js               # Vite configuration
+├── supabase-schema.sql          # Database schema
+├── SUPABASE_SETUP.md            # Supabase setup guide
+├── REPOSITORY_STRUCTURE.md      # Multi-repo architecture guide
+├── GITHUB_SETUP.md              # GitHub setup instructions
+├── .env.example                 # Environment variables template
+└── README.md                    # This file
 ```
+
+For the complete application ecosystem structure, see [REPOSITORY_STRUCTURE.md](./REPOSITORY_STRUCTURE.md).
 
 ## Data Storage
 

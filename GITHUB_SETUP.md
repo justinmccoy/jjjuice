@@ -1,6 +1,8 @@
 # GitHub Setup Guide
 
-Complete guide to push your JJ's Juice project to GitHub as a new repository.
+Complete guide to push your JJ's Juice Rating App to GitHub as a new repository.
+
+> **Note:** This guide is for the `jjjuice-rate` repository (rating subdomain). For information about the multi-repository structure, see [REPOSITORY_STRUCTURE.md](./REPOSITORY_STRUCTURE.md).
 
 ## Prerequisites
 
@@ -13,7 +15,7 @@ Open your terminal in the project directory and run:
 
 ```bash
 # Navigate to your project directory
-cd /Users/sholmes/JDevelops/jjjuice
+cd /Users/sholmes/JDevelops/jjjuice-rate
 
 # Initialize git repository
 git init
@@ -29,7 +31,7 @@ git status
 git add .
 
 # Create your first commit
-git commit -m "Initial commit: JJ's Juice - Chili Pepper Rating App with Supabase integration"
+git commit -m "Initial commit: JJ's Juice Rating App (subdomain) with Supabase integration"
 
 # Verify commit was created
 git log --oneline
@@ -43,8 +45,8 @@ git log --oneline
 2. Click the **"+"** icon in top-right corner
 3. Select **"New repository"**
 4. Fill in the details:
-   - **Repository name**: `jjjuice` (or any name you prefer)
-   - **Description**: "Chili pepper rating and review application with Supabase database"
+   - **Repository name**: `jjjuice-rate`
+   - **Description**: "Chili pepper rating subdomain application with Supabase database"
    - **Visibility**: Choose **Public** or **Private**
    - **DO NOT** check "Initialize with README" (we already have one)
    - **DO NOT** add .gitignore or license (we already have them)
@@ -61,7 +63,7 @@ brew install gh
 gh auth login
 
 # Create repository
-gh repo create jjjuice --public --source=. --remote=origin --push
+gh repo create jjjuice-rate --public --source=. --remote=origin --push
 ```
 
 ## Step 4: Connect Local Repository to GitHub
@@ -69,8 +71,8 @@ gh repo create jjjuice --public --source=. --remote=origin --push
 After creating the repository on GitHub, you'll see commands like these. Copy YOUR actual URL:
 
 ```bash
-# Add GitHub as remote origin (replace with YOUR repository URL)
-git remote add origin https://github.com/YOUR-USERNAME/jjjuice.git
+# Add GitHub as remote origin
+git remote add origin https://github.com/justinmccoy/jjjuice-rate.git
 
 # Verify remote was added
 git remote -v
@@ -90,7 +92,7 @@ git push -u origin main
 
 ## Step 6: Verify Upload
 
-1. Go to your GitHub repository URL: `https://github.com/YOUR-USERNAME/jjjuice`
+1. Go to your GitHub repository URL: `https://github.com/justinmccoy/jjjuice-rate`
 2. You should see all your files!
 3. Check that README.md displays nicely on the main page
 
@@ -100,13 +102,13 @@ Here's the full sequence in one place:
 
 ```bash
 # 1. Initialize and commit
-cd /Users/sholmes/JDevelops/jjjuice
+cd /Users/sholmes/JDevelops/jjjuice-rate
 git init
 git add .
-git commit -m "Initial commit: JJ's Juice - Chili Pepper Rating App"
+git commit -m "Initial commit: JJ's Juice Rating App (subdomain)"
 
-# 2. Connect to GitHub (replace YOUR-USERNAME with your actual username)
-git remote add origin https://github.com/YOUR-USERNAME/jjjuice.git
+# 2. Connect to GitHub
+git remote add origin https://github.com/justinmccoy/jjjuice-rate.git
 git branch -M main
 
 # 3. Push to GitHub
@@ -119,7 +121,7 @@ git push -u origin main
 ```bash
 # Remove existing remote and add new one
 git remote remove origin
-git remote add origin https://github.com/YOUR-USERNAME/jjjuice.git
+git remote add origin https://github.com/justinmccoy/jjjuice-rate.git
 ```
 
 ### Authentication Issues
@@ -145,7 +147,7 @@ git push -u origin main
 ✅ **Included:**
 - All source code (`src/`)
 - Configuration files (`package.json`, `vite.config.js`)
-- Documentation (`README.md`, `SUPABASE_SETUP.md`, etc.)
+- Documentation (`README.md`, `SUPABASE_SETUP.md`, `REPOSITORY_STRUCTURE.md`, etc.)
 - Database schema (`supabase-schema.sql`)
 - `.gitignore` file
 - `.env.example` template
@@ -176,8 +178,8 @@ Make your repo discoverable:
 
 ### Add Repository Description
 1. Click "⚙️ Settings" gear icon near "About"
-2. Description: "Chili pepper rating and review application with Supabase database"
-3. Website: (add your Vercel URL after deployment)
+2. Description: "Chili pepper rating subdomain application (rate.jjjuice.de) with Supabase database"
+3. Website: `https://rate.jjjuice.de` (add after deployment)
 4. Save changes
 
 ## Next Steps After GitHub Push
@@ -190,9 +192,13 @@ Make your repo discoverable:
    ```
 
 2. **Share Your Repository:**
-   - URL: `https://github.com/YOUR-USERNAME/jjjuice`
+   - URL: `https://github.com/justinmccoy/jjjuice-rate`
    - Share with collaborators
    - Add to your portfolio
+
+3. **Set Up Main Repository:**
+   - Follow [REPOSITORY_STRUCTURE.md](./REPOSITORY_STRUCTURE.md) to create `jjjuice-main`
+   - Link both repositories together
 
 3. **Future Updates:**
    ```bash
@@ -254,14 +260,21 @@ If using GitHub Actions:
 - ✅ Topics/tags added
 - ✅ Ready to deploy to Vercel
 
-## Your Repository URL
+## Your Repository URLs
 
-After setup, your repository will be at:
+After setup, your repositories will be at:
+
+**Rating App (this repo):**
 ```
-https://github.com/YOUR-USERNAME/jjjuice
+https://github.com/justinmccoy/jjjuice-rate
 ```
 
-Replace `YOUR-USERNAME` with your actual GitHub username.
+**Main App (to be created):**
+```
+https://github.com/justinmccoy/jjjuice-main
+```
+
+See [REPOSITORY_STRUCTURE.md](./REPOSITORY_STRUCTURE.md) for complete multi-repository setup.
 
 ## Need Help?
 
@@ -271,4 +284,7 @@ Replace `YOUR-USERNAME` with your actual GitHub username.
 
 ---
 
-**Ready to deploy?** After pushing to GitHub, follow [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) to set up your database and deploy to Vercel!
+**Ready to deploy?**
+1. After pushing to GitHub, follow [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) to set up your database
+2. See [REPOSITORY_STRUCTURE.md](./REPOSITORY_STRUCTURE.md) for deployment to subdomain
+3. Deploy to Vercel with custom domain `rate.jjjuice.de`
